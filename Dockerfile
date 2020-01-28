@@ -7,7 +7,7 @@ ENV BUILD_DEPENDENCIES="wget"
 ENV RUN_DEPENDENCIES="openssl gnupg supervisor cron net-tools htop"
 
 RUN apt-get update -y                                                                                         \
-    && apt-get install --no-install-recommends --no-install-suggests -y $BUILD_DEPENDENCIES $RUN_DEPENDENCIES \                                                                          \
+    && apt-get install --no-install-recommends --no-install-suggests -y $BUILD_DEPENDENCIES $RUN_DEPENDENCIES \
     && wget http://nginx.org/keys/nginx_signing.key                                                           \
     && apt-key add nginx_signing.key                                                                          \
     && rm -f nginx_signing.key                                                                                \
