@@ -1,4 +1,4 @@
-# invoiceninja-arm
+# InvoiceNinja-ARM
 InvoiceNinja ARM Docker container image repository (cross compiled)
 
 ## Container mount points
