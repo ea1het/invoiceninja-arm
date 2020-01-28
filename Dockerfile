@@ -5,7 +5,8 @@ FROM ea1het/invoiceninja-arm-base:latest-armv6
 
 LABEL maintainer="N/A"
 
-ENV NGINX_VERSION 1.15.8-1~stretch
+ENV NGINX_VERSION 1.17.8-1~stretch
+# ENV NGINX_VERSION 1.15.8-1~stretch
 ENV BUILD_DEPENDENCIES="wget"
 ENV RUN_DEPENDENCIES="openssl gnupg supervisor cron net-tools htop"
 
@@ -17,7 +18,7 @@ RUN apt-get update -y                                                           
     && echo "deb http://nginx.org/packages/mainline/debian/ stretch nginx" >> /etc/apt/sources.list           \
     && apt-get update -y                                                                                      \
     && apt-get install --no-install-recommends --no-install-suggests -y nginx=${NGINX_VERSION}                \
-    && rm -f /etc/nginx/conf.d/* \                                                                            \
+    && rm -f /etc/nginx/conf.d/*                                                                              \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $BUILD_DEPENDENCIES       \
     && apt-get clean                                                                                          \
     && mkdir -p /var/log/nginx                                                                                \
