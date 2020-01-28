@@ -12,6 +12,7 @@ RUN apt-get update -y                                                           
     && apt-get install --no-install-recommends --no-install-suggests -y $BUILD_DEPENDENCIES $RUN_DEPENDENCIES \
     && apt-get install --no-install-recommends --no-install-suggests -y nginx                                 \
     && rm -f /etc/nginx/conf.d/*                                                                              \
+    && rm -f /etc/nginx/nginx.conf                                                                            \
     && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false $BUILD_DEPENDENCIES       \
     && apt-get clean                                                                                          \
     && mkdir -p /var/log/nginx                                                                                \
@@ -19,6 +20,7 @@ RUN apt-get update -y                                                           
 
 COPY ./supervisord.conf /etc/supervisord.conf 
 COPY ./nginx/conf.d/ /etc/nginx/conf.d 
+COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./bin/ /ninja/bin/
 COPY ./crontab.txt /var/crontab.txt
 
