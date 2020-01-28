@@ -34,9 +34,9 @@ RUN crontab /var/crontab.txt \
     && touch /var/log/ninja_cron/reminders.log \
     && touch /var/log/ninja_cron/invoices.log
 
-COPY ./supervisord.conf /etc/supervisord.conf \
-  && ./nginx/conf.d/ /etc/nginx/conf.d \
-  && ./bin/ /ninja/bin/
+COPY ./supervisord.conf /etc/supervisord.conf 
+COPY ./nginx/conf.d/ /etc/nginx/conf.d 
+COPY ./bin/ /ninja/bin/
 
 RUN chmod +x /ninja/bin/*
 CMD ["/ninja/bin/start"]
