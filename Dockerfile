@@ -1,4 +1,7 @@
-FROM invoiceninja/invoiceninja
+# Choose your option below
+# ----------------------------------------------
+FROM ea1het/invoiceninja-arm-base:latest-armv6
+# FROM ea1het/invoiceninja-arm-base:latest-armv7
 
 LABEL maintainer="N/A"
 
