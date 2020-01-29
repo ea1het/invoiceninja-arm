@@ -3,10 +3,10 @@
 FROM ea1het/invoiceninja-arm-base:latest-armv6
 # FROM ea1het/invoiceninja-arm-base:latest-armv7
 
-LABEL maintainer="N/A"
+LABEL maintainer="Jonathan Gonzalez <j@0x30.io>"
 
-ENV BUILD_DEPENDENCIES="wget"
-ENV RUN_DEPENDENCIES="openssl gnupg supervisor cron net-tools htop"
+ENV BUILD_DEPENDENCIES="arch-test"
+ENV RUN_DEPENDENCIES="openssl gnupg supervisor cron"
 
 RUN apt-get update -y                                                                                         \
     && apt-get install --no-install-recommends --no-install-suggests -y $BUILD_DEPENDENCIES $RUN_DEPENDENCIES \
