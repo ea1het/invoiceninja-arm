@@ -1,3 +1,5 @@
+> NOTE: Due to unproper changes detected on the original package this container stops providing further ARM-compiled versions. Sorry about that. 
+
 # InvoiceNinja-ARM
 InvoiceNinja ARM Docker container image repository (cross compiled)
 
